@@ -1,8 +1,8 @@
-name: Development Deployment Workflow
+name: Production Deployment Workflow
 on:
   push:
     branches:
-      - development
+      - main
 jobs:
   install:
     runs-on: ubuntu-latest
