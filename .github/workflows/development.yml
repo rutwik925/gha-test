@@ -4,7 +4,13 @@ on:
     branches:
       - main
 jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Dependencies
+        run: npm install
   lint:
+    needs: install
     runs-on: ubuntu-latest
     steps:
       - name: Run Linting
