@@ -4,9 +4,18 @@ on:
     branches:
       - main
 jobs:
-  hello-job:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Print Hello World
-        run: echo "Hello World"
-  
+        run: echo "Running tests..."
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello World
+        run: echo "Running build..."
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello World
+        run: echo "Running deployment..."
