@@ -10,11 +10,13 @@ jobs:
       - name: Print Hello World
         run: echo "Running tests..."
   build:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Print Hello World
         run: echo "Running build..."
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Print Hello World
