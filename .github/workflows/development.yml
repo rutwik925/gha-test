@@ -4,17 +4,17 @@ on:
     branches:
       - main
 jobs:
-  test:
+  lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Run Tests
-        run: echo "Running tests..."
+      - name: Run Linting
+        run: npm run lint
   build:
-    needs: test
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Run Build
-        run: echo "Running build..."
+        run: npm run build
   deploy:
     needs: build
     runs-on: ubuntu-latest
