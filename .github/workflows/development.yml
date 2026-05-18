@@ -2,7 +2,7 @@ name: Development Workflow
 on:
   push:
     branches:
-      - main
+      - development
 jobs:
   install:
     runs-on: ubuntu-latest
