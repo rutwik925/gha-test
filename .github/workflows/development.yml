@@ -7,17 +7,17 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Hello World
+      - name: Run Tests
         run: echo "Running tests..."
   build:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - name: Print Hello World
+      - name: Run Build
         run: echo "Running build..."
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Print Hello World
+      - name: Run Deployment
         run: echo "Running deployment..."
