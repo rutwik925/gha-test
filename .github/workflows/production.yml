@@ -1,0 +1,29 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: "${{ secrets.EC2_HOST }}"
+          username: "${{ secrets.EC2_USERNAME }}"
+          key: "${{ secrets.EC2_SSH_KEY }}"
+          script: |
+            cd gha-test
+
+            git pull origin main
+
+            docker build -t gha-test .
+
+            docker stop gha-test || true
+            docker rm gha-test || true
+
+            docker run -d \
+              --name gha-test \
+              -p 80:3000 \
+              gha-test
