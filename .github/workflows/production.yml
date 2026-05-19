@@ -25,5 +25,5 @@ jobs:
 
             docker run -d \
               --name gha-test \
-              -p 80:3000 \
+              -p 3000:3000 \
               gha-test
