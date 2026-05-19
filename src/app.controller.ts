@@ -12,6 +12,6 @@ export class AppController {
 
   @Get('test')
   getTest(): string {
-    return 'This is a test route!';
+    return 'This is a sample test route!!';
   }
 }
